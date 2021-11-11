@@ -2,7 +2,7 @@ import org.hibernate.annotations.Generated;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "client")
 @Table(name="client_table")
 public class Client
 {
@@ -32,5 +32,10 @@ public class Client
   public void setName(String name)
   {
     this.name = name;
+  }
+
+  @Override public String toString()
+  {
+    return "Client{" + "id=" + id + ", name='" + name + '\'' + '}';
   }
 }
