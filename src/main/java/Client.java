@@ -1,14 +1,16 @@
 import org.hibernate.annotations.Generated;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name = "client")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name="client_table")
 public class Client
 {
   @Id
   @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
   @Column(name = "name")
   private String name;
